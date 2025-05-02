@@ -21,36 +21,49 @@ namespace Dsw2025Ej8
 
         public static void Diisplay(CuentaBancaria[] cuenta)
         {
+            // Mostrar resumen con clase anónima
+            Console.WriteLine("==== RESUMEN DE CUENTAS ====\n");
+            foreach (var resumen in cuenta.Select(c => new
+            {
+                Numero = c.Numero,
+                Tipo = c.GetType().Name,
+                Saldo = c.Saldo
+            }))
+            {
+                Console.WriteLine($"Cuenta Nº {resumen.Numero} | Tipo: {resumen.Tipo} | Saldo: ${resumen.Saldo}");
+            }
+
+            Console.WriteLine("\nPresione una tecla para continuar con las operaciones...");
+            Console.ReadKey();
+            Console.Clear();
+
             foreach (var cuentaBancaria in cuenta)
             {
                 MostrarTituloCuenta(cuentaBancaria);
 
                 RealizarOperacion("Realizar depósito de 1000", () => cuentaBancaria.Depositar(1000M), cuentaBancaria);
 
-                if(cuentaBancaria.GetType() == typeof(CuentaCorriente))
+                if (cuentaBancaria.GetType() == typeof(CuentaCorriente))
                 {
-                    CuentaCorriente cuentaCorriente = (CuentaCorriente) cuentaBancaria;
+                    CuentaCorriente cuentaCorriente = (CuentaCorriente)cuentaBancaria;
                     RealizarOperacion("Retirar mitad del limite", () => cuentaBancaria.Retirar(cuentaCorriente.LimiteDeDescubierto / 2), cuentaBancaria);
                     RealizarOperacion("Intentar retirar mas del limite", () => cuentaBancaria.Retirar(cuentaCorriente.LimiteDeDescubierto + 1), cuentaBancaria);
-
                 }
+
                 RealizarOperacion("Retirar todo el saldo", () => cuentaBancaria.Retirar(cuentaBancaria.Saldo), cuentaBancaria);
+
                 if (cuentaBancaria.Saldo == 0)
                 {
-
                     RealizarOperacion("Retirar dinero sin tener saldo", () => cuentaBancaria.Retirar(12M), cuentaBancaria);
-
                 }
+
                 if (cuentaBancaria.Estado == Estado.Suspendida)
                 {
                     RealizarOperacion("Realizar depósito con cuenta suspendida", () => cuentaBancaria.Depositar(1000M), cuentaBancaria);
-
                 }
             }
-
-
-            
         }
+
 
         private static void MostrarTituloCuenta(CuentaBancaria cuentaa)
         {

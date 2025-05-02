@@ -21,9 +21,25 @@ public class CajaAhorro : CuentaBancaria
 
     public override void Depositar(decimal monto)
     {
+        if (monto <= 0)
+            throw new MontoNoValido();
         if (Estado != Estado.Activa)
             throw new CuentaNoActiva(Estado.ToString());
         Saldo += monto;
+        //try
+        //{
+
+        //}
+        //catch (MontoNoValido e)
+        //{
+        //    Console.WriteLine(e.Message);
+
+        //}
+        //catch (CuentaNoActiva e) 
+        //{
+        //    Console.WriteLine(e.Message);
+        //}
+
     }
 
     public override void Retirar(decimal monto)

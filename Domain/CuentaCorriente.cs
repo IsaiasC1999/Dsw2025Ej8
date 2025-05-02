@@ -22,7 +22,7 @@ public class CuentaCorriente : CuentaBancaria
             monto -= monto * Comision;
             Saldo += monto;
         }
-        catch (MontoNoValido e)
+        catch (MontoNoValido e)  
         {
             Console.WriteLine(e.Message);
             
