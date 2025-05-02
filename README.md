@@ -7,13 +7,13 @@
 3. Clonar el repositorio bifurcado y trabajar sobre la rama development [x]
 4. Refactorizar el c�digo aplicando herencia seg�n el caso [x]
 5. Reemplazar los m�todos getters y setters, y campos por propiedades, tener en cuenta la accesibilidad en cada caso [x]
-6. Respetar que al crear una cuenta bancaria se reciba el n�mero y el saldo en el constructor [x]
-7. La tasa de inter�s se debe indicar al inicializar la instancia de cuenta, pero no mediante el constructor [x]
-8. El l�mite de descubierto se debe indicar al inicializar la instancia de cuenta, pero no mediante el constructor
+6. Respetar que al crear una cuenta bancaria se reciba el n�mero y el saldo en el constructor [x] 
+7. La tasa de inter�s se debe indicar al inicializar la instancia de cuenta, pero no mediante el constructor [x] [A revisar]
+8. El l�mite de descubierto se debe indicar al inicializar la instancia de cuenta, pero no mediante el constructor [A revisar]
 9. Agregar las siguientes reglas:
 	* El monto recibido por cualquier operaci�n no puede ser menor o igual a 0, de lo contrario generar una excepci�n del tipo MontoNoValido [x]
-	* Cualquier operaci�n se debe realizar si la cuenta est� activa, en cualquier otro caso generar una excepci�n del tipo CuentaNoActiva  [falta]
-	* Se debe contar con saldo para realizar un retiro, caso contrario debe generar una excepci�n SaldoInsuficiente y la cuenta debe quedar suspendida. Tener en cuenta el l�mite de descubierto si corresponde [falta] 
+	* Cualquier operaci�n se debe realizar si la cuenta est� activa, en cualquier otro caso generar una excepci�n del tipo CuentaNoActiva  [a revisar]
+	* Se debe contar con saldo para realizar un retiro, caso contrario debe generar una excepci�n SaldoInsuficiente y la cuenta debe quedar suspendida. Tener en cuenta el l�mite de descubierto si corresponde [a revisar] 
 10. Instanciar 4 cuentas (dos de cada tipo) y realizar diferentes operaciones que permitan comprobar todas las funciones posibles. [falta]
 11. Recorrer las 4 cuentas creadas y mostrar por consola un resumen de cada una, que incluya n�mero, tipo y saldo (utilizar una clase an�nima) [falta]
 

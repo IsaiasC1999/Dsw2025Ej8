@@ -3,40 +3,23 @@
 public class CuentaBancaria
 {
     
-    public TipoCuenta Tipo { get; private set; }
+    public string Numero { get; }
     
-    public string Numero { get; private set; }
+    public decimal Saldo { get; protected set; }   
     
-    public decimal Saldo { get;  set; }  
-    
-    public Estado Estado { get;  set; }
-    
-    public decimal TasaDeInteres { get; set; }
-    
-   
+    public Estado Estado { get; protected set; }
     
     public decimal Comision { get; set; }
     
     public string[] Titulares { get; private set; }
-    public CuentaBancaria(string numero, decimal saldo, TipoCuenta tipo, string[] titulares)
+    public CuentaBancaria(string numero, decimal saldo, string[] titulares)
     {
         Numero = numero;
         Saldo = saldo;
-        Tipo= tipo;
         Estado = Estado.Activa;
         Titulares = titulares;
         
     }
-
-
-
-    
-
-
- 
-
-
-
    
     public virtual void Depositar(decimal monto)
     {
@@ -50,10 +33,12 @@ public class CuentaBancaria
             _saldo += monto;
         }
         */
+
     }
 
     public virtual void Retirar(decimal monto)
     {
+
        /*  if (_tipo == TipoCuenta.CajaDeAhorro)
         {
             _saldo -= monto;
@@ -73,5 +58,7 @@ public class CuentaBancaria
         */
     }
 
+
     
+
 }
