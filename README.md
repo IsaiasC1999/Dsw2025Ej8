@@ -23,3 +23,17 @@ Consideraciones:
 - CuentaNoActiva -> No se puede operar con la cuenta {estado} (reemplazar por el estado en el que se encuentra) [x]
 - SaldoInsuficiente -> La cuenta no cuenta con saldo para la operaci�n solicitada. Fue suspendida. [x]
 - La aplicaci�n no debe interrumpir su funcionamiento si se produce una excepci�n.
+
+
+<h1>Desarrollo de Software</h1>
+<h3>Ejercicio N° 8</h3>
+<H4>INTEGRANTES</H4>
++ 46310   Monasterio Matias Javier   
+matias.monasterio.9@gmail.com
+<br>
++ 48107   Romano Cesar Isaias  
+isaias.romano99@gmail.com
+<br>
++ 47037   Zarate Cristian Daniel   
+cristiandanielzarate95@gmail.com
+<br> 
